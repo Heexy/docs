@@ -42,7 +42,6 @@
   box-shadow: none !important;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
   background: var(--ifm-background-color);
-  padding: 0.75rem 0;
 }
 .navbar__brand {
   font-weight: 600;

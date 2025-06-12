@@ -46,7 +46,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/heexy/docs/tree/main/docs/',
         },
         blog: false, // Disable the blog plugin
         theme: {
@@ -99,14 +99,10 @@ const config: Config = {
               label: 'Terms of Service',
               href: 'https://heexy.org/terms-of-service',
             },
-            {
-              label: 'Contact',
-              href: 'mailto:info@heexy.org',
-            },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Heexy, Inc.`,
+      copyright: `© ${new Date().getFullYear()} Heexy.`,
     },
     prism: {
       theme: prismThemes.github,
