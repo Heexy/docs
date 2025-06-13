@@ -34,7 +34,28 @@ const config: Config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'cs'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      cs: {
+        label: 'Čeština',
+        direction: 'ltr',
+        htmlLang: 'cs-CZ',
+      },
+    },
   },
+
+  plugins: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        language: ['en'],
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -45,8 +66,12 @@ const config: Config = {
           routeBasePath: '/', // Serve the docs at the site's root
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/heexy/docs/tree/main/docs/',
+          editUrl: ({locale, docPath}) => {
+            if (locale !== 'en') {
+              return `https://github.com/heexy/docs/tree/main/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
+            }
+            return `https://github.com/heexy/docs/tree/main/docs/${docPath}`;
+          },
         },
         blog: false, // Disable the blog plugin
         theme: {

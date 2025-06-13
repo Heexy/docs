@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "Heexy Documentation",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Heexy logo",
+    "description": "The alt text of navbar logo"
+  }
+}
