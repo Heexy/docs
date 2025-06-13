@@ -1,0 +1,12 @@
+{
+  "position": 3,
+  "label": "• 💬 Heexy Translate",
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Heexy Translate",
+    "slug": "/translate"
+  }
+}

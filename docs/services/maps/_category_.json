@@ -1,0 +1,12 @@
+{
+  "position": 2,
+  "label": "• 🗺️ Heexy Maps",
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Heexy maps",
+    "slug": "/maps"
+  }
+}

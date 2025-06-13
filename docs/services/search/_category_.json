@@ -1,0 +1,12 @@
+{
+  "position": 1,
+  "label": "• 🔎 Search Engine",
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Heexy Search Engine",
+    "slug": "/search-engine"
+  }
+}

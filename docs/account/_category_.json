@@ -1,0 +1,12 @@
+{
+  "position": 3,
+  "label": "• 🔒 Account",
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Tutorial overview",
+    "slug": "/account"
+  }
+}
