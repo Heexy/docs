@@ -3,10 +3,5 @@
   "label": "• 🚀 Services",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
-  "link": {
-    "type": "generated-index",
-    "title": "Tutorial overview",
-    "slug": "/services"
-  }
+  "className": "red"
 }

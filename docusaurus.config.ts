@@ -52,7 +52,7 @@ const config: Config = {
     [
       '@easyops-cn/docusaurus-search-local',
       {
-        language: ['en', 'cs'],
+        language: ['en'], // Languages to index
         hashed: true,
         docsRouteBasePath: '/',
       },
