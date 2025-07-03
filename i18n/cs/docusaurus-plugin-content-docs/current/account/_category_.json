@@ -1,12 +1,12 @@
 {
   "position": 5,
-  "label": "• 🔒 Account",
+  "label": "• 🔒 Účet",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Select article",
+    "title": " Vyberte článek",
     "slug": "/account"
   }
 }

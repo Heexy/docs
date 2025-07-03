@@ -1,12 +1,12 @@
 {
-  "position": 5,
-  "label": "• 🔒 Account",
+  "position": 3,
+  "label": "• 💬 Heexy Překladač",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Select article",
-    "slug": "/account"
+    "title": "Heexy Translate",
+    "slug": "/translate"
   }
 }

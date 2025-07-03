@@ -34,11 +34,10 @@
   --ifm-color-content: #c0c0c0;
   --ifm-background-color: #000000;
   --ifm-background-surface-color: #0a0a0a;
-  --ifm-color-emphasis-100: #1a1a1a;
+  --ifm-color-emphasis-100: #080808;
   --ifm-color-emphasis-200: #2a2a2a;
-  --ifm-color-emphasis-300: #3a3a3a;
+  --ifm-color-emphasis-300: #1e1e1e;
   --ifm-card-background-color: #0f0f0f;
-  /* Scrollbar styling for dark theme */
   scrollbar-width: thin;
   scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
 }
@@ -46,6 +45,10 @@
 [data-theme="dark"] ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+}
+
+table thead tr, table th, table td {
+  border:none;
 }
 
 [data-theme="dark"] hr {
@@ -215,7 +218,7 @@ code:not(.prism-code code) {
   color: var(--ifm-font-color-base);
 }
 .table-of-contents {
-  border: 1px solid var(--ifm-color-emphasis-200);
+  border: none;
   border-radius: var(--ifm-global-radius);
   background: var(--ifm-background-surface-color);
 }
@@ -232,9 +235,7 @@ code:not(.prism-code code) {
   border: 1px solid var(--ifm-color-emphasis-300);
   background: var(--ifm-background-surface-color);
 }
-* {
-  box-shadow: none !important;
-}
+
 @media screen and (max-width: 768px) {
   .markdown h1 {
     font-size: 2rem;

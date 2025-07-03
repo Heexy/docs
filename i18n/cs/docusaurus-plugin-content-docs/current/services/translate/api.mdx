@@ -1,0 +1,385 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Heexy Translate API
+Heexy Translate API is an advanced translation solution that offers unlimited and free translation services for over 130 languages.
+
+## Basic Info
+
+Base URL for v1 is `https://api.heexy.org/translate/v1/`.
+
+All endpoints have CORS enabled.
+
+All endpoints return status code `400` on an invalid request, `500` on a server error, and `200` on success.
+
+## Available Endpoints
+
+### GET `/listLanguages`
+
+Returns a JSON array containing all available languages.
+
+**Example Request:**
+```bash
+GET /translate/v1/listLanguages
+```
+
+**URL Parameters:**
+- `type` - set to `tts` to show TTS languages
+
+**Example Response:**
+```json
+[
+    ...
+    {
+        "name": "English",
+        "code": "en"
+    },
+    ...
+]
+```
+
+### GET `/translate`
+
+Returns JSON containing the translated text.
+
+**Example Request:**
+```bash
+GET /translate/v1/translate?text=hello&from=en&to=fr
+```
+
+**URL Parameters:**
+- `text` - text to translate
+- `from` - source language (leave blank to auto-detect)
+- `to` - target language
+
+**Example Response:**
+```json
+{
+    "result": "Bonjour"
+}
+```
+
+### GET `/tts`
+
+Returns an MPEG audio file. This is limited to 200 characters due to file size. We recommend splitting larger text into multiple requests and then joining them into a single file.
+
+**Example Request:**
+```bash
+GET /translate/v1/tts?lang=en&text=hello
+```
+
+**URL Parameters:**
+- `text` - text
+- `lang` - text language
+
+**Example Response:**
+
+```bash
+GET /translate/v1/tts?lang=en&text=hello
+```
+<video controls="controls">
+  <source type="video/mp4" src="https://api.heexy.org/translate/v1/tts?lang=en&text=hello"></source>
+  <source type="video/webm" src="https://api.heexy.org/translate/v1/tts?lang=en&text=hello"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
+
+## Code Examples
+
+<Tabs>
+  <TabItem value="javascript" label="JavaScript (Node.js)">
+
+```javascript
+const axios = require('axios');
+
+const baseURL = 'https://api.heexy.org/translate/v1/';
+
+// Function to get the list of available languages
+async function getListOfLanguages() {
+  try {
+    const response = await axios.get(baseURL + 'listLanguages');
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Function to translate text
+async function translateText(text, fromLanguage, toLanguage) {
+  try {
+    const response = await axios.get(baseURL + 'translate', {
+      params: {
+        text: text,
+        from: fromLanguage,
+        to: toLanguage,
+      },
+    });
+    console.log(response.data.result);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Example usage:
+getListOfLanguages(); // To get the list of available languages
+translateText('hello', 'en', 'cs'); // To translate "hello" from English to Czech
+```
+
+  </TabItem>
+  <TabItem value="python" label="Python">
+
+```python
+import requests
+
+base_url = 'https://api.heexy.org/translate/v1/'
+
+# Function to get the list of available languages
+def get_list_of_languages():
+    response = requests.get(base_url + 'listLanguages')
+    if response.status_code == 200:
+        print(response.json())
+    else:
+        print('Error:', response.status_code)
+
+# Function to translate text
+def translate_text(text, from_language, to_language):
+    params = {'text': text, 'from': from_language, 'to': to_language}
+    response = requests.get(base_url + 'translate', params=params)
+    if response.status_code == 200:
+        result = response.json().get('result')
+        print(result)
+    else:
+        print('Error:', response.status_code)
+
+# Example usage:
+get_list_of_languages()  # To get the list of available languages
+translate_text('hello', 'en', 'cs')  # To translate "hello" from English to Czech
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class HeexyTranslateAPI {
+
+    public static void main(String[] args) {
+        String baseUrl = "https://api.heexy.org/translate/v1/";
+
+        // Function to get the list of available languages
+        try {
+            URL listLanguagesUrl = new URL(baseUrl + "listLanguages");
+            HttpURLConnection listLanguagesConnection = (HttpURLConnection) listLanguagesUrl.openConnection();
+            listLanguagesConnection.setRequestMethod("GET");
+            int listLanguagesResponseCode = listLanguagesConnection.getResponseCode();
+
+            if (listLanguagesResponseCode == 200) {
+                Scanner scanner = new Scanner(listLanguagesConnection.getInputStream());
+                StringBuilder response = new StringBuilder();
+                while (scanner.hasNext()) {
+                    response.append(scanner.nextLine());
+                }
+                System.out.println(response.toString());
+            } else {
+                System.out.println("Error: " + listLanguagesResponseCode);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Function to translate text
+        try {
+            String text = "hello";
+            String fromLanguage = "en";
+            String toLanguage = "cs";
+
+            URL translateUrl = new URL(baseUrl + "translate?text=" + text + "&from=" + fromLanguage + "&to=" + toLanguage);
+            HttpURLConnection translateConnection = (HttpURLConnection) translateUrl.openConnection();
+            translateConnection.setRequestMethod("GET");
+            int translateResponseCode = translateConnection.getResponseCode();
+
+            if (translateResponseCode == 200) {
+                Scanner scanner = new Scanner(translateConnection.getInputStream());
+                StringBuilder response = new StringBuilder();
+                while (scanner.hasNext()) {
+                    response.append(scanner.nextLine());
+                }
+                System.out.println(response.toString());
+            } else {
+                System.out.println("Error: " + translateResponseCode);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+  </TabItem>
+  <TabItem value="php" label="PHP">
+
+```php
+<?php
+$baseURL = 'https://api.heexy.org/translate/v1/';
+
+// Function to fetch data from a given URL
+function fetchData($url) {
+    $options = [
+        'http' => [
+            'method' => 'GET',
+        ],
+    ];
+    $context = stream_context_create($options);
+    $data = file_get_contents($url, false, $context);
+
+    return $data;
+}
+
+// Function to get the list of available languages
+function getListOfLanguages() {
+    global $baseURL;
+    $url = $baseURL . 'listLanguages';
+    $data = fetchData($url);
+
+    if ($data) {
+        $response = json_decode($data, true);
+        print_r($response);
+    } else {
+        echo 'Error: Unable to fetch data';
+    }
+}
+
+// Function to translate text
+function translateText($text, $fromLanguage, $toLanguage) {
+    global $baseURL;
+    $url = $baseURL . 'translate?text=' . urlencode($text) . '&from=' . $fromLanguage . '&to=' . $toLanguage;
+    $data = fetchData($url);
+
+    if ($data) {
+        $response = json_decode($data, true);
+        echo $response['result'];
+    } else {
+        echo 'Error: Unable to fetch data';
+    }
+}
+
+// Example usage:
+getListOfLanguages(); // To get the list of available languages
+translateText('hello', 'en', 'cs'); // To translate "hello" from English to Czech
+?>
+```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+```rust
+use reqwest;
+
+const BASE_URL: &str = "https://api.heexy.org/translate/v1/";
+
+// Function to fetch data from a given URL
+async fn fetch_data(url: &str) -> Result<String, reqwest::Error> {
+    let response = reqwest::get(url).await?; // Send a GET request to the URL and await the response
+    response.text().await // Read the response body as text
+}
+
+// Function to get the list of available languages
+async fn get_list_of_languages() {
+    let url = format!("{}/listLanguages", BASE_URL); // Construct the URL for listing available languages
+    match fetch_data(&url).await {
+        Ok(data) => {
+            println!("{}", data); // Print the list of available languages
+        }
+        Err(e) => {
+            eprintln!("Error: {:?}", e); // Print an error message if there's an issue
+        }
+    }
+}
+
+// Function to translate text
+async fn translate_text(text: &str, from_language: &str, to_language: &str) {
+    let url = format!("{}/translate?text={}&from={}&to={}", BASE_URL, text, from_language, to_language); // Construct the URL for text translation
+    match fetch_data(&url).await {
+        Ok(data) => {
+            let json: serde_json::Value = serde_json::from_str(&data).expect("Failed to parse JSON"); // Parse the JSON response
+            let result = json["result"].as_str().unwrap(); // Extract the translation result
+            println!("{}", result); // Print the translation result
+        }
+        Err(e) => {
+            eprintln!("Error: {:?}", e); // Print an error message if there's an issue
+        }
+    }
+}
+
+#[tokio::main]
+async fn main() {
+    get_list_of_languages().await; // To get the list of available languages
+    translate_text("hello", "en", "cs").await; // To translate "hello" from English to Czech
+}
+```
+
+  </TabItem>
+  <TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+    "fmt"
+    "net/http"
+    "io/ioutil"
+)
+
+const baseURL = "https://api.heexy.org/translate/v1/"
+
+// Function to fetch data from a given URL
+func fetchData(url string) ([]byte, error) {
+    response, err := http.Get(url)
+    if err != nil {
+        return nil, err
+    }
+    defer response.Body.Close()
+    return ioutil.ReadAll(response.Body)
+}
+
+// Function to get the list of available languages
+func getListOfLanguages() {
+    url := baseURL + "listLanguages"
+    data, err := fetchData(url)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println(string(data))
+}
+
+// Function to translate text
+func translateText(text string, fromLanguage string, toLanguage string) {
+    url := fmt.Sprintf("%stranslate?text=%s&from=%s&to=%s", baseURL, text, fromLanguage, toLanguage)
+    data, err := fetchData(url)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println(string(data))
+}
+
+func main() {
+    getListOfLanguages() // To get the list of available languages
+    translateText("hello", "en", "cs") // To translate "hello" from English to Czech
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## License
+
+You may or may not indicate that you use Heexy translate and provide a link to it, if you do so you will support us, if you are interested in working with Heexy please do not hesitate to contact us, [here](https://docs.heexy.org/contact) is a link to ways to contact us.
+
+> Note: Heexy takes no responsibility for anything when using the Heexy translate API.

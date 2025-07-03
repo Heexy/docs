@@ -1,12 +1,12 @@
 {
-  "position": 5,
-  "label": "• 🔒 Account",
+  "position": 2,
+  "label": "• 🗺️ Heexy Mapy",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Select article",
-    "slug": "/account"
+    "title": "Heexy maps",
+    "slug": "/maps"
   }
 }

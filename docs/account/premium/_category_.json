@@ -1,12 +1,12 @@
 {
   "position": 5,
-  "label": "• 🔒 Account",
+  "label": "• 👑 Heexy Premium",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
     "title": "Select article",
-    "slug": "/account"
+    "slug": "/premium"
   }
 }

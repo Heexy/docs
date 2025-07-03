@@ -1,12 +1,12 @@
 {
-  "position": 5,
-  "label": "• 🔒 Account",
+  "position": 1,
+  "label": "• 🔎 Vyhledavač",
   "collapsible": true,
   "collapsed": true,
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Select article",
-    "slug": "/account"
+    "title": "Heexy Search Engine",
+    "slug": "/search-engine"
   }
 }

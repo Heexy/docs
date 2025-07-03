@@ -32,7 +32,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'cs'],
+    locales: ['en', 'cs', 'sr'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -43,6 +43,11 @@ const config: Config = {
         label: 'Čeština',
         direction: 'ltr',
         htmlLang: 'cs-CZ',
+      },
+      sr: {
+        label: 'Србија',
+        direction: 'ltr',
+        htmlLang: 'sr-RS',
       },
     },
   },
@@ -83,6 +88,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {name: 'description', content: 'Heexy Docs Documentation for Heexy Search, Maps, Translate, and more.'},
+      {property: 'og:title', content: 'Heexy Docs'},
+      {property: 'og:description', content: 'Heexy Docs Documentation for Heexy Search, Maps, Translate, and more.'},
+      {property: 'themme-color', content: '#03adfc'},
+    ],
     image: 'img/logo.png',
     navbar: {
       title: 'Heexy Documentation',
