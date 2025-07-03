@@ -22,21 +22,48 @@
   --ifm-color-emphasis-300: #dadce0;
 }
 [data-theme="dark"] {
-  --ifm-color-primary: #33bfff;
-  --ifm-color-primary-dark: #1ab6ff;
-  --ifm-color-primary-darker: #0db0ff;
-  --ifm-color-primary-darkest: #009ae6;
-  --ifm-color-primary-light: #4dc8ff;
-  --ifm-color-primary-lighter: #5cccff;
-  --ifm-color-primary-lightest: #7dd5ff;
-  --docusaurus-highlighted-code-line-bg: rgba(51, 191, 255, 0.15);
-  --ifm-font-color-base: #e8e8e8;
-  --ifm-color-content: #b8b8b8;
-  --ifm-background-color: #0d1117;
-  --ifm-background-surface-color: #161b22;
-  --ifm-color-emphasis-100: #21262d;
-  --ifm-color-emphasis-200: #30363d;
-  --ifm-color-emphasis-300: #484f58;
+  --ifm-color-primary: #00d4ff;
+  --ifm-color-primary-dark: #00c2e6;
+  --ifm-color-primary-darker: #00b8d9;
+  --ifm-color-primary-darkest: #0099b3;
+  --ifm-color-primary-light: #1ae6ff;
+  --ifm-color-primary-lighter: #33eaff;
+  --ifm-color-primary-lightest: #66f0ff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 212, 255, 0.1);
+  --ifm-font-color-base: #f0f0f0;
+  --ifm-color-content: #c0c0c0;
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #0a0a0a;
+  --ifm-color-emphasis-100: #1a1a1a;
+  --ifm-color-emphasis-200: #2a2a2a;
+  --ifm-color-emphasis-300: #3a3a3a;
+  --ifm-card-background-color: #0f0f0f;
+  /* Scrollbar styling for dark theme */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-background-color);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme="dark"] hr {
+  border: none;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: var(--ifm-background-color);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-200);
 }
 .navbar {
   box-shadow: none !important;
@@ -138,23 +165,7 @@
   text-decoration: underline;
   color: var(--ifm-color-primary-dark);
 }
-.markdown a[href*="heexy.org"] {
-  background: var(--ifm-color-emphasis-100);
-  padding: 0.5rem 1rem;
-  border-radius: var(--ifm-global-radius);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  display: inline-block;
-  margin: 0.25rem 0.25rem 0.25rem 0;
-  font-weight: 500;
-  color: var(--ifm-font-color-base);
-  text-decoration: none;
-}
-.markdown a[href*="heexy.org"]:hover {
-  background: var(--ifm-color-primary);
-  color: white;
-  border-color: var(--ifm-color-primary);
-  text-decoration: none;
-}
+
 .prism-code {
   border-radius: var(--ifm-global-radius);
   border: 1px solid var(--ifm-color-emphasis-200);

@@ -113,6 +113,10 @@ const config: Config = {
               label: 'Heexy Maps',
               href: 'https://maps.heexy.org',
             },
+            {
+              label: 'Heexy Translate',
+              href: 'https://translate.heexy.org',
+            },
           ],
         },
         {
@@ -125,6 +129,10 @@ const config: Config = {
             {
               label: 'Terms of Service',
               href: 'https://heexy.org/terms-of-service',
+            },
+            {
+              label: 'Cokie Policy',
+              href: 'https://heexy.org/cookie-policy',
             },
           ],
         },
