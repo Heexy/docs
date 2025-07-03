@@ -8,7 +8,6 @@ const config: Config = {
   title: 'Heexy Docs',
   tagline: 'Search for anything, from anywhere',
   favicon: 'img/favicon.ico',
-
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -84,8 +83,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.png',
     navbar: {
       title: 'Heexy Documentation',
       logo: {
