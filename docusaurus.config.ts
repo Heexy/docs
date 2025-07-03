@@ -94,7 +94,6 @@ const config: Config = {
       {property: 'og:description', content: 'Heexy Docs Documentation for Heexy Search, Maps, Translate, and more.'},
       {property: 'themme-color', content: '#03adfc'},
     ],
-    image: 'img/logo.png',
     navbar: {
       title: 'Heexy Documentation',
       logo: {
