@@ -1,5 +1,5 @@
 :root {
-  --ifm-color-primary: #111111;
+  --ifm-color-primary: #00d4ff;
   --ifm-color-primary-dark: #000000;
   --ifm-color-primary-darker: #000000;
   --ifm-color-primary-darkest: #000000;
@@ -22,7 +22,7 @@
   --ifm-color-emphasis-300: #cccccc;
 }
 [data-theme="dark"] {
-  --ifm-color-primary: #ffffff;
+  --ifm-color-primary: #00d4ff;
   --ifm-color-primary-dark: #e0e0e0;
   --ifm-color-primary-darker: #cccccc;
   --ifm-color-primary-darkest: #bbbbbb;
@@ -135,14 +135,11 @@ table thead tr, table th, table td {
   letter-spacing: -0.01em;
 }
 .markdown h2 {
-  color: var(--ifm-font-color-base);
-  font-weight: 600;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-left: 1rem;
-  border-left: 3px solid var(--ifm-color-primary);
-  background: none;
+    border-left: 3px solid var(--ifm-color-primary);
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    padding-left: 1rem;
+    position: relative;
 }
 .markdown h3 {
   color: var(--ifm-font-color-base);
@@ -173,7 +170,10 @@ table thead tr, table th, table td {
   color: var(--ifm-color-primary-light);
   text-decoration: underline;
 }
-
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  text-decoration: none !important;
+}
 .prism-code {
   border-radius: var(--ifm-global-radius);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -185,9 +185,6 @@ code:not(.prism-code code) {
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
   border: 1px solid var(--ifm-color-emphasis-200);
-}
-.container {
-  max-width: 1200px;
 }
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-color-emphasis-200);
