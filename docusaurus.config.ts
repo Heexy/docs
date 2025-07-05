@@ -44,11 +44,6 @@ const config: Config = {
         direction: 'ltr',
         htmlLang: 'cs-CZ',
       },
-      sr: {
-        label: 'Србија',
-        direction: 'ltr',
-        htmlLang: 'sr-RS',
-      },
     },
   },
 
@@ -95,15 +90,21 @@ const config: Config = {
       {property: 'themme-color', content: '#03adfc'},
     ],
     navbar: {
-      title: 'Heexy Documentation',
       logo: {
         alt: 'Heexy logo',
-        src: 'img/logo.svg',
+        src: 'img/logo-dark.svg',
+        srcDark: 'img/logo-light.svg',
       },
       items: [
         {
           type: 'localeDropdown',
           position: 'right',
+        },
+        {
+          href: 'https://github.com/heexy/docs',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
@@ -151,7 +152,15 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    colorMode: {
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+    },
   } satisfies Preset.ThemeConfig,
+  scripts: [
+    { src: 'https://account.heexy.org/account.js', defer: true }
+  ],
 };
 
 export default config;

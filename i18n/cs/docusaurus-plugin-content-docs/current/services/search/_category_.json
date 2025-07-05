@@ -3,10 +3,5 @@
   "label": "• 🔎 Vyhledavač",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
-  "link": {
-    "type": "generated-index",
-    "title": "Heexy Search Engine",
-    "slug": "/search-engine"
-  }
+  "className": "red"
 }

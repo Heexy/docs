@@ -3,10 +3,5 @@
   "label": "• 🔒 Účet",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
-  "link": {
-    "type": "generated-index",
-    "title": " Vyberte článek",
-    "slug": "/account"
-  }
+  "className": "red"
 }

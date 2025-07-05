@@ -3,10 +3,5 @@
   "label": "• 🔒 Account",
   "collapsible": true,
   "collapsed": true,
-  "className": "red",
-  "link": {
-    "type": "generated-index",
-    "title": "Select article",
-    "slug": "/account"
-  }
+  "className": "red"
 }
