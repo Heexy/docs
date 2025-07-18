@@ -158,9 +158,6 @@ const config: Config = {
       defaultMode: 'light',
     },
   } satisfies Preset.ThemeConfig,
-  scripts: [
-    { src: 'https://account.heexy.org/account.js', defer: true }
-  ],
 };
 
 export default config;
