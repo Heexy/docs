@@ -4,7 +4,7 @@
 
 # 🚀 Heexy Documentation
 
-Official docs for the Heexy search engine, the community can better describe the features of Heexy here!
+Official docs for the Heexy search engine — built by the community, for the community!
 
 ---
 

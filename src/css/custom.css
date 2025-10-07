@@ -165,8 +165,22 @@ table thead tr, table th, table td {
   text-underline-offset: 2px;
   transition: color 0.15s;
 }
-.markdown a:hover {
-  text-decoration: underline;
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  transition: color 0.35s ease;
+}
+
+.markdown h1:hover,
+.markdown h2:hover,
+.markdown h3:hover,
+.markdown h4:hover,
+.markdown h5:hover,
+.markdown h6:hover {
+  color: #00b9de;
 }
 .table-of-contents__link:hover,
 .table-of-contents__link--active {
